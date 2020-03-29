@@ -1,1 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Used</th>
+      <th>Available</th>
+      <th>Referenced</th>
+      <th>Mountpoint</th>
 
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for dataset <- @datasets do %>
+    <tr>
+      <td><%= dataset[:name] %></td>
+      <td><%= dataset[:used] %></td>
+      <td><%= dataset[:available] %></td>
+      <td><%= dataset[:referenced] %></td>
+      <td><%= dataset[:mountpoint] %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
