@@ -13,8 +13,15 @@ defmodule Msdb.Zfs do
 
   def parse_list(datasets) do
     Enum.map(datasets, fn dataset ->
-      [name, used, available, reference, mountpoint] = dataset |> String.split()
-      [name: name, used: used, available: available, reference: reference, mountpoint: mountpoint]
+      [name, used, available, referenced, mountpoint] = dataset |> String.split()
+
+      [
+        name: name,
+        used: used,
+        available: available,
+        referenced: referenced,
+        mountpoint: mountpoint
+      ]
     end)
   end
 end

@@ -24,14 +24,14 @@ defmodule Msdb.ZfsTest do
         name: "ztest",
         used: "117K",
         available: "39.9M",
-        reference: "24K",
+        referenced: "24K",
         mountpoint: "/ztest"
       ],
       [
         name: "ztest/lorem",
         used: "24K",
         available: "39.9M",
-        reference: "24K",
+        referenced: "24K",
         mountpoint: "/ztest/lorem"
       ]
     ]
