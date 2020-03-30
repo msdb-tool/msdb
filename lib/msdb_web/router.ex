@@ -16,8 +16,8 @@ defmodule MsdbWeb.Router do
   scope "/", MsdbWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
-    get "/storage", StorageController, :index
+    get("/", PageController, :index)
+    get("/zfs", ZfsController, :index)
   end
 
   # Other scopes may use custom stacks.

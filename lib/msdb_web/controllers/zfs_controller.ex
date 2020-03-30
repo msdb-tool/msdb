@@ -1,4 +1,4 @@
-defmodule MsdbWeb.StorageController do
+defmodule MsdbWeb.ZfsController do
   use MsdbWeb, :controller
 
   def index(conn, _params) do
