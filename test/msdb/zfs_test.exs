@@ -15,8 +15,8 @@ defmodule Msdb.ZfsTest do
 
   test "Parse correctly zfs list output" do
     list_unparsed = [
-      "ztest         117K  39.9M       24K  /ztest",
-      "ztest/lorem    24K  39.9M       24K  /ztest/lorem"
+      "ztest\t117K\t39.9M\t24K\t/ztest",
+      "ztest/lorem\t24K\t39.9M\t24K\t/ztest/lorem"
     ]
 
     list_parsed = [
