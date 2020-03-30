@@ -54,4 +54,9 @@ defmodule Msdb.Zpool do
       ]
     end)
   end
+
+  def history() do
+    {raw_history, _} = System.cmd("sudo", ["zpool", "history"])
+    raw_history |> sanitize_raw_string()
+  end
 end

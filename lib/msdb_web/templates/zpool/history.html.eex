@@ -1,0 +1,5 @@
+<blockquote>
+<%= for line <- @history do %>
+  <%= line %><br/>
+<% end %>
+</blockquote>
