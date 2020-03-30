@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Size</th>
+      <th>Allocated</th>
+      <th>Free</th>
+      <th>Checkpoint</th>
+      <th>Expandsize</th>
+      <th>Fragmentation</th>
+      <th>Capacity</th>
+      <th>Dedupratio</th>
+      <th>Altroot</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for zpool <- @zpools do %>
+    <tr>
+      <td><%= zpool[:name] %></td>
+      <td><%= zpool[:size] %></td>
+      <td><%= zpool[:allocated] %></td>
+      <td><%= zpool[:free] %></td>
+      <td><%= zpool[:checkpoint] %></td>
+      <td><%= zpool[:expandsize] %></td>
+      <td><%= zpool[:fragmentation] %></td>
+      <td><%= zpool[:capacity] %></td>
+      <td><%= zpool[:dedupratio] %></td>
+      <td><%= zpool[:altroot] %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
