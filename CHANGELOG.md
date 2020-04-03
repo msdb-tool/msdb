@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.3
+
+  - Add zpool history feature
+  - Rename storage into zfs
+  - Fix zpool page not showing
+
 ## 0.2
 
   - Add ZFS module
