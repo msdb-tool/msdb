@@ -1,0 +1,20 @@
+---
+- hosts: all
+  vars:
+    msdb:
+      user: "msdb"
+  tasks:
+    - name: Create "{{ msdb.user }}" user
+      user:
+        name: "{{ msdb.user }}"
+        state: present
+        password: '*'
+        update_password: always
+
+    - name: Copy sudo permission
+      template:
+        src: usr/local/etc/sudoers.d/msdb
+        dest: /usr/local/etc/sudoers.d/10-msdb
+        owner: root
+        group: wheel
+        validate: /usr/local/sbin/visudo -cf %s
