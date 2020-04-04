@@ -55,8 +55,23 @@ defmodule Msdb.Zpool do
     end)
   end
 
+  @spec history() :: list(String.t())
   def history() do
     {raw_history, _} = System.cmd("sudo", ["zpool", "history"])
     raw_history |> sanitize_raw_string()
+  end
+
+  @spec history(String.t()) :: list(String.t())
+  def history(zpool) when is_bitstring(zpool) do
+    {raw_history, status_code} = System.cmd("sudo", ["zpool", "history", zpool])
+
+    zpool_history =
+      raw_history
+      |> sanitize_raw_string()
+
+    case status_code do
+      0 -> zpool_history
+      _ -> ["Zpool '#{zpool}':", "Zpool don't exist or don't have history."]
+    end
   end
 end
