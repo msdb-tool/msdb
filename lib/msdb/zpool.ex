@@ -14,6 +14,22 @@ defmodule Msdb.Zpool do
     |> parse_list()
   end
 
+  @spec list(String.t()) :: list(list())
+  def list(zpool) when is_bitstring(zpool) do
+    {raw_list, _} =
+      System.cmd("zpool", [
+        "list",
+        "-H",
+        "-o",
+        "name,size,allocated,free,checkpoint,expandsize,fragmentation,capacity,dedupratio,health,altroot",
+        zpool
+      ])
+
+    raw_list
+    |> sanitize_raw_string()
+    |> parse_list()
+  end
+
   @spec sanitize_raw_string(String.t()) :: list(list(String.t()))
   def sanitize_raw_string(raw_list) do
     raw_list |> String.replace_trailing("\n", "") |> String.split("\n")
