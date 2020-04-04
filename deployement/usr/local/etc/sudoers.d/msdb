@@ -1,0 +1,2 @@
+# Zpool operations
+{{ msdb.user }}  ALL=(root) NOPASSWD: /sbin/zpool history *
