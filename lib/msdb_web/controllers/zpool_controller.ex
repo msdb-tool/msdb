@@ -6,8 +6,8 @@ defmodule MsdbWeb.ZpoolController do
     render(conn, "index.html", zpools: zpools)
   end
 
-  def history(conn, _params) do
-    history = Msdb.Zpool.history()
+  def history(conn, %{"zpool" => zpool}) do
+    history = Msdb.Zpool.history(zpool)
     render(conn, "history.html", history: history)
   end
 end

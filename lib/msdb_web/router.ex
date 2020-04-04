@@ -19,7 +19,7 @@ defmodule MsdbWeb.Router do
     get("/", PageController, :index)
     get("/zfs", ZfsController, :index)
     get("/zpool", ZpoolController, :index)
-    get("/zpool/history", ZpoolController, :history)
+    get("/zpool/:zpool/history", ZpoolController, :history)
   end
 
   # Other scopes may use custom stacks.
