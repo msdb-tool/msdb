@@ -18,7 +18,7 @@ defmodule MsdbWeb.Router do
 
     get("/", PageController, :index)
     get("/zfs", ZfsController, :index)
-    get("/zpool", ZpoolController, :index)
+    get("/zpool", ZpoolController, :list)
     get("/zpool/:zpool/history", ZpoolController, :history)
   end
 
